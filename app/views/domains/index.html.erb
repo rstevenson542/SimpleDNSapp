@@ -1,0 +1,20 @@
+<h1>List of existing domains</h1>
+<hr/>
+<table border="1" cellspacing="2" cellpadding="5">
+	<tr>
+		<th>Name</th>
+		<th>TTL</th>
+		<th>Email</th>
+		<th>Number of Records</th>
+		<th>Comment</th>
+	</tr>
+	<% @domains.each do |domain| %>
+	<tr>
+		<td><%= link_to domain.name, domain_url(domain.id) %></td>
+		<td><%= domain.ttl %></td>
+		<td><%= domain.email %></td>
+		<td><%= domain.records.count %></td>
+		<td><%= domain.comment %></td>
+	</tr>
+	<% end %>
+</table>
