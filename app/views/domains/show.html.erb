@@ -7,6 +7,7 @@
 		<th>Data</th>
 		<th>TTL</th>
 		<th>Priority</th>
+		<th></th>
 	</tr>
 	<% @records.each do |record| %>
 	<tr>
@@ -15,6 +16,7 @@
 		<td><%= record.data %></td>
 		<td><%= record.ttl %></td>
 		<td><%= record.priority %></td>
+		<td><%#= link_to "Edit", edit_domain_url() %></td>
 	</tr>
 	<% end %>
 </table>
