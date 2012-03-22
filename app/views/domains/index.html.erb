@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <h1>List of existing domains</h1>
 <hr/>
 <table border="1" cellspacing="2" cellpadding="5">
@@ -7,6 +8,8 @@
 		<th>Email</th>
 		<th>Number of Records</th>
 		<th>Comment</th>
+		<th></th>
+		<th></th>
 	</tr>
 	<% @domains.each do |domain| %>
 	<tr>
@@ -15,6 +18,8 @@
 		<td><%= domain.email %></td>
 		<td><%= domain.records.count %></td>
 		<td><%= domain.comment %></td>
+		<td><%#= link_to "Edit", edit_domain_url(domain.id) %></td>
+		<td><%= link_to "Delete", domain_url(domain.id), :method => "delete" %></td>
 	</tr>
 	<% end %>
 </table>
