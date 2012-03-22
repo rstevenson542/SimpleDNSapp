@@ -1,12 +1,15 @@
+<p id="notice"><%= notice %></p>
 <h1>List of existing domains</h1>
 
 <table id="hor-zebra">
 	<tr>
-		<th class="name">Name</th>
-		<th class="ttl">TTL</th>
-		<th class="email">Email</th>
-		<th class="records">Number of Records</th>
-		<th class="comment">Comment</th>
+		<th>Name</th>
+		<th>TTL</th>
+		<th>Email</th>
+		<th>Number of Records</th>
+		<th>Comment</th>
+		<th></th>
+		<th></th>
 	</tr>
 	<% @domains.each do |domain| %>
 	<tr class="<%= cycle('odd', 'even') %>">
@@ -15,7 +18,8 @@
 		<td><%= domain.email %></td>
 		<td><%= domain.records.count %></td>
 		<td><%= domain.comment %></td>
-		<td><%= link_to "edit", edit_domain_url(domain.id)  %></td>
+		<td><%#= link_to "Edit", edit_domain_url(domain.id) %></td>
+		<td><%= link_to "Delete", domain_url(domain.id), :method => "delete" %></td>
 	</tr>
 	<% end %>
 </table>

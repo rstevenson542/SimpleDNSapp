@@ -10,6 +10,14 @@ DnsApp::Application.routes.draw do
   
   get 'domains/:id' => 'domains#show', as: :domain
   
+  get 'domains/:id/edit' => 'domains#edit', as: :edit_domain
+  
+  put 'domains' => 'domains#update'
+  
+  delete 'domains/:id' => 'domains#destroy'
+  
+  # resources :domains
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
