@@ -1,0 +1,8 @@
+<h2>Current Domain Name: <%= @domain.name %></h2>
+
+<%= form_tag "/domains", :method => 'put' do %>
+  <p>
+    <%= text_field_tag :name %>
+    <%= submit_tag "Submit change", :domain_id => @domain.id %>
+  </p>
+<% end %>
