@@ -1,0 +1,6 @@
+<%= form_tag "/domains/#{@domain.id}", :method => 'put' do %>
+  <p>
+    <%= text_field_tag :name, params[:name] %>
+    <%= submit_tag "update", :name => nil %>
+  </p>
+<% end %>

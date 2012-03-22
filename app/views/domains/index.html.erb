@@ -1,20 +1,21 @@
 <h1>List of existing domains</h1>
-<hr/>
-<table border="1" cellspacing="2" cellpadding="5">
+
+<table id="hor-zebra">
 	<tr>
-		<th>Name</th>
-		<th>TTL</th>
-		<th>Email</th>
-		<th>Number of Records</th>
-		<th>Comment</th>
+		<th class="name">Name</th>
+		<th class="ttl">TTL</th>
+		<th class="email">Email</th>
+		<th class="records">Number of Records</th>
+		<th class="comment">Comment</th>
 	</tr>
 	<% @domains.each do |domain| %>
-	<tr>
-		<td><%= link_to domain.name, domain_url(domain.id) %></td>
+	<tr class="<%= cycle('odd', 'even') %>">
+		<td class="domain"><%= link_to domain.name, domain_url(domain.id) %></td>
 		<td><%= domain.ttl %></td>
 		<td><%= domain.email %></td>
 		<td><%= domain.records.count %></td>
 		<td><%= domain.comment %></td>
+		<td><%= link_to "edit", edit_domain_url(domain.id)  %></td>
 	</tr>
 	<% end %>
 </table>

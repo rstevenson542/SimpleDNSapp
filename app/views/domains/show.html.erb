@@ -1,6 +1,6 @@
 <h1>Records for <%= link_to @records.first.name, domains_url %></h1>
-<hr/>
-<table border="1" cellspacing="2" cellpadding="5">
+
+<table id="hor-zebra">
 	<tr>
 		<th>Name</th>
 		<th>Type</th>
@@ -9,7 +9,7 @@
 		<th>Priority</th>
 	</tr>
 	<% @records.each do |record| %>
-	<tr>
+	<tr class="<%= cycle('odd', 'even') %>">
 		<td><%= record.name %></td>
 		<td><%= record.type %></td>
 		<td><%= record.data %></td>

@@ -2,6 +2,10 @@ DnsApp::Application.routes.draw do
   
   root :to => 'domains#index'
   
+  put 'domains/:id' => "domains#update"
+  
+  get 'domains/:id/edit' => 'domains#edit', as: :edit_domain
+  
   get 'domains' => 'domains#index', as: :domains
   
   get 'domains/:id' => 'domains#show', as: :domain

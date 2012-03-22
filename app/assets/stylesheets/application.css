@@ -10,4 +10,14 @@
  *
  *= require_self
  *= require_tree .
+ *= require_reset
+ *= require_table
 */
+
+h1 {
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+a:link {
+	text-decoration: none;
+}
