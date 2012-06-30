@@ -1,29 +1,20 @@
 class DomainsController < ApplicationController
-  # 
-  # before_filter :initialize_client
-  #  
-  #  def initialize_client
-  #    dns = CloudDns::Client.new(:username => 'abhiandrob', :api_key => 'b106bad3a9946857304ec861d180645b')
-  #  end
   
   before_filter :dns_client
   
   def dns_client
-    @dns = CloudDns::Client.new(:username => 'abhiandrob', :api_key => 'b106bad3a9946857304ec861d180645b')
+    @dns = CloudDns::Client.new(:username => '#', :api_key => '#')
   end
   
   def index
-    # @dns = CloudDns::Client.new(:username => 'abhiandrob', :api_key => 'b106bad3a9946857304ec861d180645b')
     @domains = @dns.domains
   end
   
   def show
-    # @dns = CloudDns::Client.new(:username => 'abhiandrob', :api_key => 'b106bad3a9946857304ec861d180645b')
     @records = @dns.domain(params[:id]).records
   end
   
   def edit
-    # @dns = CloudDns::Client.new(:username => 'abhiandrob', :api_key => 'b106bad3a9946857304ec861d180645b')
     @domain = @dns.domain(params[:id])
   end
   
